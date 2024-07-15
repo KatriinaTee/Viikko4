@@ -45,7 +45,7 @@ public class Student implements Serializable{
     }
 
     public void printSpecs() {
-        System.out.println("opiskelijat: " + studentNumber + ": " + name);
+        System.out.println(studentNumber + ": " + name);
 
     }
     public void printGrades() {

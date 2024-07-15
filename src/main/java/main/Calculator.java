@@ -50,6 +50,7 @@ public class Calculator {
         }else {
             int medianPosition1 = amountOfGrades/2-1;
             int medianPosition2 = amountOfGrades/2;
+            medianPosition1 = medianPosition1 < 0 ? 0 : medianPosition1;
             median = (double) (gradeValueList.get(medianPosition1) + gradeValueList.get(medianPosition2)) /2;
             // m=(a[n/2-1]+a[n/2])/2;   javatutoring.com
         }

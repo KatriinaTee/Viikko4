@@ -29,6 +29,7 @@ public class University {
     }
 
     public void printStudents (){
+        System.out.println("opiskelijat: ");
         students.forEach((student) -> {
             student.printSpecs();
         });
@@ -53,6 +54,9 @@ public class University {
             String line;
             while ((line = logReader.readLine()) != null){
                 System.out.println(line);
+                String[] s = line.split(":");
+                Student newStudent = new Student(s[0], Integer.parseInt(s[1].trim()));
+                addStudent(newStudent);
             }
             logReader.close();
         } catch (IOException e) {
