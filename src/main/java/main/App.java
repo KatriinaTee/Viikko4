@@ -3,10 +3,6 @@ package main;
 import java.util.List;
 import java.util.Scanner;
 
-/**
- * Hello world!
- *
- */
 public class App 
 {
    
@@ -34,7 +30,6 @@ public class App
 
                     Student newStudent = new Student(name, studentNumber);
                     newUniversity.addStudent(newStudent);
-                    // newUniversity.writeLog(newStudent.getName());
                     break;
 
                     case 2:
