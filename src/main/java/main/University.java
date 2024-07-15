@@ -53,9 +53,15 @@ public class University {
             BufferedReader logReader = new BufferedReader(new FileReader(FILENAME));
             String line;
             while ((line = logReader.readLine()) != null){
-                System.out.println(line);
-                String[] s = line.split(":");
+                String[] studentGrade = line.split("_");
+                String[] s = studentGrade[0].split("/");
                 Student newStudent = new Student(s[0], Integer.parseInt(s[1].trim()));
+
+                String[] gr = studentGrade[1].split("/");
+                for (int i = 0; i < gr.length; i++) {
+                    String[] grades = gr[i].split(":");
+                    newStudent.addGrade(grades[0], Integer.parseInt(grades[1].trim()));
+                }
                 addStudent(newStudent);
             }
             logReader.close();

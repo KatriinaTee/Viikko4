@@ -110,7 +110,13 @@ public class App
                     List<Student> students5 = newUniversity.getStudents();
 
                     students5.forEach((student) -> {
-                        newUniversity.writeLog(student.getName() + ": " + student.getStudentNumber());
+                        List<Grade> l = student.getGrades();
+                        StringBuilder sb = new StringBuilder();
+                        sb.append( "_");
+                        l.forEach(g -> {
+                            sb.append(g.getCourse()+ ": "+ g.getGrade() + "/");
+                        });
+                        newUniversity.writeLog(student.getName() + "/ " + student.getStudentNumber()+ sb);
                     });
                     break;
 
